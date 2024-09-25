@@ -1,0 +1,99 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.navbar {
+  @include flex-center;
+
+  position: fixed;
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.05);
+  background-color: rgba(white, 0.9);
+
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  margin: 0;
+  padding: 0;
+
+  width: 100vw;
+  height: $navbar-height;
+
+  nav {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  ul {
+    @include section;
+    @include flex-ac;
+    justify-content: space-between;
+
+    // Unstyle
+    li {
+      list-style: none;
+    }
+
+    $inner-margin: 25px;
+
+    padding: 0;
+
+    // First 2 elements (Logo and Search Bar), are aligned to the left
+    li:first-child {
+      margin-right: 15px;
+    }
+
+    .nav-search {
+      @include flex-ac;
+      justify-content: space-between;
+
+      padding-left: 10px;
+
+      width: 45%;
+      border: 1px solid $primary;
+      border-radius: 5px;
+
+      &--button {
+        padding: 10px 18px;
+        background-color: $accent;
+        color: $background;
+      }
+
+      input {
+        border: none;
+        font-size: 1rem;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    li:last-child {
+      margin-right: $inner-margin;
+    }
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px;
+  transition: 0.2s;
+
+  color: inherit;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+.nav-search {
+  input {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+  }
+}

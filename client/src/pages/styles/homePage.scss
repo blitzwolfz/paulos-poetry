@@ -1,0 +1,66 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.home-page-wrapper {
+  margin-top: $navbar-height;
+  padding: $page-padding;
+  background-color: $primary;
+
+  @include flex-center;
+}
+
+.home-page {
+  @include flex-center;
+  flex-direction: column;
+
+  color: white;
+  height: calc(100dvh - #{$navbar-height});
+  margin: 0;
+  padding: 0;
+
+  $padding-size: 10px;
+  $border-size: 4px;
+
+  gap: 3rem;
+
+  h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 3rem;
+  }
+
+  input {
+    // padding: $padding-size;
+    border: none;
+    outline: none;
+
+    // Border radius on the left side
+    border-radius: $border-size 0 0 $border-size;
+    padding: $padding-size;
+
+    width: min(100vw - 2 * $page-padding - 2 * $page-padding, 400px);
+  }
+
+  .link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 2rem;
+
+      border: 1px solid $accent;
+      padding: $padding-size;
+      border-radius: 0 $border-size $border-size 0;
+      background-color: $accent;
+
+      transition: 0.2s;
+      &:hover {
+        text-decoration: underline;
+        background-color: rgb($accent, 0.8);
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "./variables.scss";
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-jc {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-ac {
+  display: flex;
+  align-items: center;
+}
+
+@mixin page {
+  padding-top: $navbar-height;
+  padding-left: $page-padding;
+  padding-right: $page-padding;
+  background-color: $background;
+
+  min-height: calc(100dvh - #{$navbar-height});
+}
+
+@mixin section {
+  width: 80%;
+  max-width: 1500px;
+  margin: auto;
+}
+
+@mixin button {
+  color: $text;
+  transition: background-color 0.2s;
+  padding: 5px 10px;
+}
+
+@mixin button-1 {
+  @include button;
+  color: white;
+
+  background-color: $primary;
+
+  &:hover {
+    background-color: darken($primary, 10%);
+  }
+}
+
+@mixin button-2 {
+  @include button;
+  color: $accent;
+
+  background-color: $secondary;
+
+  &:hover {
+    background-color: darken($secondary, 10%);
+  }
+}

@@ -1,0 +1,82 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.login-page {
+  @include flex-center;
+
+  // With margin-top it won't be centered vertically, but without it,
+  // the navbar will cover the title when the height is too small
+  // This way, it is still centered, and will be pushed down by the navbar when resized
+  height: calc(100dvh - $navbar-height);
+  margin-top: $navbar-height;
+
+  &--title {
+    margin: 0;
+  }
+
+  &--error {
+    color: red;
+    font-size: 1.1rem;
+  }
+
+  form {
+    @include flex-ac;
+    flex-direction: column;
+    gap: 15px;
+
+    width: fit-content;
+
+    margin: auto;
+
+    padding: 50px 25px;
+    box-shadow: 0 0 10px 0 rgba($primary, 0.1);
+
+    a {
+      // Position to the left
+      margin-right: auto;
+      font-weight: 700;
+      color: $primary;
+      text-decoration: none;
+      font-size: 1.1rem;
+
+      transition: all 0.2s;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    input {
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: $primary;
+      color: white;
+
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: darken($primary, 10%);
+      }
+    }
+
+    $child-width: min(500px, 80dvw);
+
+    input,
+    button {
+      padding: 15px 10px;
+      font-size: 1.2rem;
+      width: $child-width;
+    }
+
+    div {
+      @include flex-ac;
+      gap: 10px;
+      width: $child-width;
+
+      .login-page--name {
+        width: 50%;
+      }
+    }
+  }
+}

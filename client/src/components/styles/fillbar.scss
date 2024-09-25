@@ -1,0 +1,22 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+$br-size: 5px;
+
+.fillbar {
+  border-radius: $br-size;
+
+  width: 300px;
+  height: 10px;
+
+  background-color: $secondary;
+}
+
+.fillbar-fill {
+  border-radius: $br-size;
+
+  background-color: $primary;
+  height: 100%;
+
+  display: block;
+}

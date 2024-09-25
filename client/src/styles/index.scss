@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+
+  font-family: "montserrat", sans-serif;
+}
+
+// Remove the default button styles
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}

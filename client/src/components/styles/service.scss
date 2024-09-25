@@ -1,0 +1,40 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.service-wrapper {
+  @include page;
+  @include section;
+}
+
+.star-wrapper {
+  @include flex-ac;
+  gap: 10px;
+
+  .star {
+    color: $primary;
+  }
+}
+
+// Styling it as an h1 without using h1 because that's technically only used for titles
+// And this is not a title
+.large-star-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.service-fillbar-wrapper {
+  @include flex-jc;
+  flex-direction: column;
+  gap: 10px;
+
+  .service-fillbar {
+    @include flex-ac;
+    width: 380px;
+
+    gap: 10px;
+
+    .fillbar {
+      margin-left: auto;
+    }
+  }
+}

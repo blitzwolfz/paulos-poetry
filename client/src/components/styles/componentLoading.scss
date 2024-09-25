@@ -1,0 +1,7 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.loading {
+  @include page;
+  @include section;
+}

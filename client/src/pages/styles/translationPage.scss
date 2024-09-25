@@ -1,0 +1,92 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.translations-page {
+  @include page;
+  min-height: 100dvh;
+  margin: auto;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.translation-upload {
+  margin: auto;
+  width: 400px;
+
+  * {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+
+    * {
+      width: 100%;
+    }
+
+    button {
+      border: 1px solid $accent;
+      background-color: $accent;
+      color: white;
+
+      transition: 0.2s;
+      &:hover {
+        background-color: rgb($accent, 0.8);
+      }
+    }
+  }
+}
+
+.translation-wrapper {
+  width: 90dvw;
+  min-width: 300px;
+  max-width: 1600px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1rem;
+  margin: auto;
+
+  div {
+    background-color: $primary;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.25rem 2rem;
+    border-radius: 5px;
+  }
+
+  form {
+    button {
+      color: white;
+      padding: 0.5rem 1rem;
+    }
+
+    .button-delete {
+      background-color: rgb(150, 0, 0);
+    }
+  }
+}
+
+.translation-link {
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+
+  &:hover {
+    color: rgb(255, 255, 255, 0.8);
+  }
+
+  .translation-date {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: white;
+  }
+}
